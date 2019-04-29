@@ -1,0 +1,273 @@
+=====================================
+Starting 5 Extremal
+  Q = 0.327619   comms = 2
+  Q = 0.385452   comms = 3
+  Q = 0.468055   comms = 4
+  Q = 0.469588   comms = 5
+  End rep
+  Q = 0.332483   comms = 2
+  Q = 0.379237   comms = 3
+  Q = 0.471228   comms = 4
+  End rep
+  Q = 0.327619   comms = 2
+  Q = 0.385452   comms = 3
+  Q = 0.468055   comms = 4
+  Q = 0.469588   comms = 5
+  End rep
+  Q = 0.327619   comms = 2
+  Q = 0.410222   comms = 3
+  Q = 0.468055   comms = 4
+  Q = 0.469588   comms = 5
+  End rep
+  Q = 0.332483   comms = 2
+  Q = 0.424473   comms = 3
+  Q = 0.471228   comms = 4
+  End rep
+End of 5 Extremal
+Q(e) = 0.471228   (2.301s)
+=====================================
+Starting 5 Louvain
+  Q = 0.473274   comms = 4
+  Q = 0.473511   comms = 4
+  resizing
+  Q = 0.473511   comms = 4
+  End rep
+End of 5 Louvain
+Q(l) = 0.473511   (0.172s)
+=====================================
+Ini_Default
+=====================================
+Starting 5 Louvain
+  Q = 0.301157   comms = 100
+  Q = 0.429071   comms = 26
+  Q = 0.442578   comms = 14
+  Q = 0.448434   comms = 11
+  Q = 0.449700   comms = 10
+  Q = 0.451080   comms = 9
+  Q = 0.451769   comms = 8
+  Q = 0.452098   comms = 8
+  resizing
+  Q = 0.452098   comms = 8
+  Q = 0.467446   comms = 5
+  resizing
+  Q = 0.467446   comms = 5
+  End rep
+End of 5 Louvain
+Q(l) = 0.467446   (0.531s)
+=====================================
+Starting 5 Reposition
+  Q = 0.468512   comms = 5
+  Q = 0.468663   comms = 5
+  Q = 0.468851   comms = 5
+  Q = 0.469482   comms = 5
+  Q = 0.470040   comms = 5
+  Q = 0.470524   comms = 5
+  Q = 0.470532   comms = 5
+  Q = 0.470636   comms = 5
+  Q = 0.470725   comms = 5
+  Q = 0.470935   comms = 5
+  End rep
+End of 5 Reposition
+Q(r) = 0.470935   (0.614s)
+=====================================
+Ini_Default
+=====================================
+Starting 5 Louvain
+  Q = 0.301157   comms = 100
+  Q = 0.429071   comms = 26
+  Q = 0.442578   comms = 14
+  Q = 0.448434   comms = 11
+  Q = 0.449700   comms = 10
+  Q = 0.451080   comms = 9
+  Q = 0.451769   comms = 8
+  Q = 0.452098   comms = 8
+  resizing
+  Q = 0.452098   comms = 8
+  Q = 0.467446   comms = 5
+  resizing
+  Q = 0.467446   comms = 5
+  End rep
+End of 5 Louvain
+Q(l) = 0.467446   (0.535s)
+=====================================
+Starting 5 Louvain
+  Q = 0.468687   comms = 5
+  Q = 0.468825   comms = 5
+  Q = 0.469384   comms = 5
+  Q = 0.470010   comms = 5
+  Q = 0.470529   comms = 5
+  Q = 0.470615   comms = 5
+  Q = 0.470642   comms = 5
+  Q = 0.470739   comms = 5
+  Q = 0.470742   comms = 5
+  Q = 0.470935   comms = 5
+  resizing
+  Q = 0.470935   comms = 5
+  End rep
+End of 5 Louvain
+Q(l) = 0.470935   (0.528s)
+=====================================
+Ini_Default
+=====================================
+Starting 5 Spectral
+  Q = 0.317615   comms = 2
+  Q = 0.397254   comms = 3
+  Q = 0.441620   comms = 4
+  End rep
+  Q = 0.316537   comms = 2
+  Q = 0.396982   comms = 3
+  Q = 0.440703   comms = 4
+  End rep
+  Q = 0.317615   comms = 2
+  Q = 0.397254   comms = 3
+  Q = 0.441620   comms = 4
+  End rep
+  Q = 0.316537   comms = 2
+  Q = 0.396982   comms = 3
+  Q = 0.440703   comms = 4
+  End rep
+  Q = 0.316537   comms = 2
+  Q = 0.396982   comms = 3
+  Q = 0.440703   comms = 4
+  End rep
+End of 5 Spectral
+Q(s) = 0.441620   (4.303s)
+=====================================
+Starting 5 Reposition
+  Q = 0.464994   comms = 4
+  Q = 0.469655   comms = 4
+  Q = 0.470069   comms = 4
+  End rep
+End of 5 Reposition
+Q(r) = 0.470069   (0.241s)
+=====================================
+Starting 5 Fast
+  Q = 0.470069   comms = 4
+  End rep
+End of 5 Fast
+Q(f) = 0.470069   (0.040s)
+=====================================
+Starting 5 Reposition
+  End rep
+End of 5 Reposition
+Q(r) = 0.470069   (0.081s)
+=====================================
+Ini_Default
+=====================================
+Starting 5 Tabu
+  Q = 0.008663   comms = 588
+  Q = 0.032983   comms = 542
+  Q = 0.073151   comms = 495
+  Q = 0.129227   comms = 449
+  Q = 0.164453   comms = 403
+  Q = 0.212624   comms = 361
+  Q = 0.251742   comms = 319
+  Q = 0.277435   comms = 273
+  Q = 0.302300   comms = 231
+  Q = 0.335775   comms = 195
+  Q = 0.361102   comms = 154
+  Q = 0.385581   comms = 111
+  Q = 0.404812   comms = 73
+  Q = 0.419065   comms = 35
+  Q = 0.428904   comms = 7
+  Q = 0.430596   comms = 5
+  Q = 0.432461   comms = 4
+  Q = 0.433031   comms = 4
+  End rep
+  Q = 0.009943   comms = 588
+  Q = 0.048770   comms = 539
+  Q = 0.095845   comms = 492
+  Q = 0.126006   comms = 448
+  Q = 0.167051   comms = 400
+  Q = 0.208088   comms = 353
+  Q = 0.243138   comms = 308
+  Q = 0.287550   comms = 258
+  Q = 0.330501   comms = 216
+  Q = 0.361390   comms = 172
+  Q = 0.387027   comms = 131
+  Q = 0.406809   comms = 87
+  Q = 0.421414   comms = 51
+  Q = 0.432788   comms = 19
+  Q = 0.440274   comms = 6
+  Q = 0.441098   comms = 5
+  Q = 0.441098   comms = 5
+  End rep
+  Q = 0.010606   comms = 588
+  Q = 0.043717   comms = 540
+  Q = 0.071410   comms = 495
+  Q = 0.093686   comms = 454
+  Q = 0.113766   comms = 409
+  Q = 0.139382   comms = 361
+  Q = 0.174278   comms = 319
+  Q = 0.227662   comms = 274
+  Q = 0.265567   comms = 228
+  Q = 0.300347   comms = 180
+  Q = 0.348422   comms = 131
+  Q = 0.397239   comms = 89
+  Q = 0.442522   comms = 50
+  Q = 0.464724   comms = 21
+  Q = 0.472084   comms = 6
+  Q = 0.473173   comms = 5
+  Q = 0.474082   comms = 5
+  Q = 0.474082   comms = 5
+  End rep
+  Q = 0.008720   comms = 588
+  Q = 0.021624   comms = 538
+  Q = 0.046435   comms = 492
+  Q = 0.086035   comms = 454
+  Q = 0.133877   comms = 416
+  Q = 0.174138   comms = 369
+  Q = 0.219287   comms = 324
+  Q = 0.266037   comms = 281
+  Q = 0.307018   comms = 233
+  Q = 0.347001   comms = 186
+  Q = 0.374790   comms = 144
+  Q = 0.393238   comms = 104
+  Q = 0.417095   comms = 68
+  Q = 0.440682   comms = 37
+  Q = 0.457850   comms = 15
+  Q = 0.465595   comms = 7
+  Q = 0.468051   comms = 6
+  Q = 0.468188   comms = 6
+  Q = 0.468188   comms = 6
+  End rep
+  Q = 0.014102   comms = 590
+  Q = 0.046801   comms = 543
+  Q = 0.086340   comms = 495
+  Q = 0.129673   comms = 447
+  Q = 0.159353   comms = 397
+  Q = 0.178504   comms = 348
+  Q = 0.209193   comms = 304
+  Q = 0.249448   comms = 266
+  Q = 0.277492   comms = 224
+  Q = 0.305540   comms = 189
+  Q = 0.334398   comms = 153
+  Q = 0.368860   comms = 117
+  Q = 0.394973   comms = 83
+  Q = 0.414141   comms = 48
+  Q = 0.426989   comms = 14
+  Q = 0.433852   comms = 8
+  Q = 0.435174   comms = 8
+  Q = 0.435762   comms = 8
+  Q = 0.435762   comms = 8
+  End rep
+End of 5 Tabu
+Q(t) = 0.474082   (2m 11.106s)
+=====================================
+Starting 5 Reposition
+  End rep
+End of 5 Reposition
+Q(r) = 0.474082   (0.086s)
+=====================================
+Starting 5 Fast
+  Q = 0.474082   comms = 5
+  End rep
+End of 5 Fast
+Q(f) = 0.474082   (0.040s)
+=====================================
+Starting 5 Reposition
+  End rep
+End of 5 Reposition
+Q(r) = 0.474082   (0.084s)
+=====================================
+Q_Best = 0.474082   (2m 20.664s)   communities: 5   parameters: WN el-lr-ll-srfr-trfr 5
