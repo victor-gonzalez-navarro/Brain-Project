@@ -148,13 +148,47 @@ def rich_club_coeff(G, title, ax):
     ax.plot(vectorx, vectory, 'b.')
     ax.title.set_text(title + '\nRich Club coefficient')
 
+
+def clustering_coeff_vic(AG, title, ax1, ax2, iterations, color):
+    resultclusteringcoef = []
+    resultglobaleficienc = []
+    numberedges = []
+    for i in range(iterations):
+        Gaux = nx.from_numpy_matrix(AG)
+        resultclusteringcoef.append(nx.average_clustering(Gaux))
+        resultglobaleficienc.append(nx.global_efficiency(Gaux))
+        numberedges.append(Gaux.number_of_edges())
+        minval = np.min(AG[np.nonzero(AG)])
+        a, b = np.where(AG == minval)
+        if len(a) > 0:
+            a = a[0]
+        if len(b) > 0:
+            b = b[0]
+            AG[a, b] = 0
+            AG[b, a] = 0
+    ax1.plot(numberedges, resultclusteringcoef, color+'-', label=title)
+    ax1.set_xlim([min(numberedges), max(numberedges)])
+    ax1.title.set_text('Clustering coefficient')
+    ax1.set_xlabel('Number of edges')
+    ax1.invert_xaxis()
+    ax1.grid()
+    ax2.plot(numberedges, resultglobaleficienc, color+'-', label=title)
+    ax2.set_xlim([min(numberedges), max(numberedges)])
+    ax2.title.set_text('Global Efficiency')
+    ax2.set_xlabel('Number of edges')
+    ax2.invert_xaxis()
+    ax2.grid()
+
+
 # ----------------------------------------------------------------------------------------------------------------- MAIN
 
 # Load Coactivation matrix and Restig-State Connection matrix
 Gcoact = nx.read_pajek('./NetworksPajek/Coactivation.net')
 Gresti = nx.read_pajek('./NetworksPajek/RestingState.net')
 # Both Gcoact and Gresti have the same number of vertices and edges
-Grand = nx.gnm_random_graph(len(Gcoact), Gcoact.number_of_edges())
+Grand = nx.read_pajek('./NetworksPajek/Random.net')
+#Grand = nx.gnm_random_graph(len(Gcoact), Gcoact.number_of_edges())
+#nx.write_pajek(Grand, "./NetworksPajek/Random.net")
 
 
 # Plot degree distribution
@@ -165,10 +199,12 @@ ax2 = fig.add_subplot(132)
 plot_degree_distribution(Gresti, 'Resting-State', ax2)
 ax3 = fig.add_subplot(133)
 plot_degree_distribution(Grand, 'Random', ax3)
+fig.savefig('./Images/DegreeDistributions' + '.png')
+
 
 
 # Plot Adjacency Matrices
-fig = plt.figure(figsize=(15, 5))
+fig = plt.figure(figsize=(16, 4))
 ax1 = fig.add_subplot(131)
 plot_adjacencyMatrix(Gcoact, 'Coactivation', fig, ax1)
 ax2 = fig.add_subplot(132)
@@ -179,10 +215,10 @@ for item in Grand.edges:
     array3[item[0],item[1]] = 1
     array3[item[1], item[0]] = 1
 plot_binary_adjacencyMatrix2(Grand, array3, 'Random', fig, ax3)
-plt.show()
+fig.savefig('./Images/AdjacencyMatrices' + '.png')
 
 
-# Correlation between Coactivation and Resting-State
+# Pearson Correlation between Coactivation and Resting-State
 array1 = np.array(np.matrix(np.array(nx.to_numpy_matrix(Gcoact))).flatten())[0]
 array2 = np.array(np.matrix(np.array(nx.to_numpy_matrix(Gresti))).flatten())[0]
 array3 = array3.flatten()
@@ -195,15 +231,9 @@ compute_correlation(array1,array3, 'Coactivation vs Random', ax2)
 # Correlation between Rsting-State and Random
 ax3 = fig.add_subplot(133)
 compute_correlation(array2,array3, 'Restin-State vs Random', ax3)
-plt.show()
+fig.savefig('./Images/PearsonCorrelation' + '.png')
 
-
-# The rich-club coefficient is a metric on graphs and networks, designed to measure the extent to which well-connected
-# nodes also connect to each other. Networks which have a relatively high rich-club coefficient are said to demonstrate
-# the rich-club effect and will have many connections between nodes of high degree.
-# The rich-club coefficient of a network is useful as a heuristic measurement of the robustness of a network. A high
-# rich-club coefficient implies that the hubs are well connected, and global connectivity is resilient to any one hub being removed.
-# Paper: https://arxiv.org/pdf/physics/0701290.pdf
+# Rich Club Coefficient, Paper: https://arxiv.org/pdf/physics/0701290.pdf
 # Rich Club Coefficient Coactivation
 fig = plt.figure(figsize=(15, 5))
 ax1 = fig.add_subplot(131)
@@ -214,10 +244,42 @@ rich_club_coeff(nx.Graph(Gresti), 'Restin-State', ax2)
 # Rich Club Coefficient Random
 ax3 = fig.add_subplot(133)
 rich_club_coeff(Grand, 'Random', ax3)
-plt.show()
+fig.savefig('./Images/RichClubCoefficient' + '.png')
+
+
+# Clustering Coefficient
+fig = plt.figure(figsize=(12, 5))
+iteration = 5000
+ax1 = fig.add_subplot(121)
+ax2 = fig.add_subplot(122)
+clustering_coeff_vic(np.array(nx.to_numpy_matrix(Gcoact)), 'Coactivation', ax1, ax2, iteration, 'b')
+clustering_coeff_vic(np.array(nx.to_numpy_matrix(Gresti)), 'Resting-State', ax1, ax2, iteration, 'g')
+clustering_coeff_vic(array3, 'Random', ax1, ax2, iteration, 'r')
+ax1.legend()
+fig.savefig('./Images/ClusteringAndEfficiency' + '.png')
 
 
 
 
+
+
+
+
+# Our brain is a network. It consists of spatially distributed, but functionally linked regions that continuously share
+# information with each other. Interestingly, recent advances in the acquisition and analysis of functional neuroimaging
+#  data have catalyzed the exploration of functional connectivity in the human brain. Functional connectivity is defined
+#  as the temporal dependency of neuronal activation patterns of anatomically separated brain regions and in the past
+# years an increasing body of neuroimaging studies has started to explore functional connectivity by measuring the level
+#  of co-activation of resting-state fMRI time-series between brain regions. These studies have revealed interesting new
+#  findings about the functional connections of specific brain regions and local networks, as well as important new
+#  insights in the overall organization of functional communication in the brain network. Here we present an overview of
+#  these new methods and discuss how they have led to new insights in core aspects of the human brain, providing an
+# overview of these novel imaging techniques and their implication to neuroscience. We discuss the use of spontaneous
+# resting-state fMRI in determining functional connectivity, discuss suggested origins of these signals, how functional
+# connections tend to be related to structural connections in the brain network and how functional brain communication
+#  may form a key role in cognitive performance. Furthermore, we will discuss the upcoming field of examining functional
+#  connectivity patterns using graph theory, focusing on the overall organization of the functional brain network.
+# Specifically, we will discuss the value of these new functional connectivity tools in examining believed connectivity
+# diseases, like Alzheimer's disease, dementia, schizophrenia and multiple sclerosis.
 
 
